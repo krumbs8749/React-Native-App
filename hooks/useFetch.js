@@ -23,7 +23,6 @@ export default useFetch = (endpoint, query) => {
             const response = await axios.request(options);
             await response;
             setData(response.data.jobs);
-            console.log(response.data.jobs);
         } catch (error) {
             setError(error);
             console.log(error)
@@ -34,9 +33,8 @@ export default useFetch = (endpoint, query) => {
     }
 
     useEffect(() => {
-        if(data) return;
         fetchData();
-    }, [data]);
+    }, []);
 
     const refetch = () => {
         setLoading(true);
