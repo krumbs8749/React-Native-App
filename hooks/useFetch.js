@@ -22,8 +22,8 @@ export default useFetch = (endpoint, query) => {
         try {
             const response = await axios.request(options);
             await response;
-            setData(response.data);
-            console.log(response.data);
+            setData(response.data.jobs);
+            console.log(response.data.jobs);
         } catch (error) {
             setError(error);
             console.log(error)
